@@ -99,7 +99,6 @@ for i=1:nm
     end
 end
 
-%bar_N=bar_P'/nm;
 b=bar(bar_P);
 grid on;
 set(0,'defaulttextinterpreter','latex'); 
@@ -107,7 +106,6 @@ set(0,'defaultlinelinewidth',2);
 set(0,'DefaultLineMarkerSize',10);
 set(0,'DefaultTextFontSize', 16);
 set(0,'DefaultAxesFontSize',16);
-%set(b,'XTickLabel',{'1','2-5','5-100','100-200','200-1000','>1000'});
 legend('XX');
 xlabel('x axis');
 ylabel('y axis');
