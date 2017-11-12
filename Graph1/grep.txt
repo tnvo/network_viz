@@ -1,0 +1,10 @@
+# This prints all the matching outputs. Must minus one due to the header from results.
+wc -l 20150801.as2types.txt
+echo "Transit/Access:"
+grep Transit/Access 20150801.as2types.txt | wc -l
+
+echo "Content:"
+grep Content 20150801.as2types.txt | wc -l
+
+echo "Enterprise:"
+grep Enterpise 20150801.as2types.txt | wc -l
