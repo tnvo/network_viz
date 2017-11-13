@@ -45,6 +45,7 @@ def read_files(data):
     # 0         1   2
     # 1.3.45.0	24	133741_133948
     # 1.3.54.0	24	133741
+    # 36.85.84.0	24	7713_65245 <- prefix & length -> 7713 -> 65245 range
 
     fileIn = "routeviews-rv2-20171105-1200.txt"
     with open(fileIn) as file:
