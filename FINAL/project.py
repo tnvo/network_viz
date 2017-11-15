@@ -188,13 +188,13 @@ def n_degree(data):
 
         # Classifying and figuring out
         # Enterprise ASes: any AS with degree less or equal to two and no customers or peers.
-        if data[a_s]['degree'] < 2 and len(data[a_s]['as_links']['p2c']) == 0 and len(data[a_s]['as_links']['p2p']) == 0:
+        if data[a_s]['degree'] <= 2 and len(data[a_s]['as_links']['p2c']) == 0 and len(data[a_s]['as_links']['p2p']) == 0:
             data[a_s]['class'] = 'Enterprise'
         # Content AS: Any AS with no customers and at least one peer.
-        elif len(data[a_s]['as_links']['p2c']) == 0 and len(data[a_s]['as_links']['p2p']) > 1:
+        elif len(data[a_s]['as_links']['p2c']) == 0 and len(data[a_s]['as_links']['p2p']) >= 1:
             data[a_s]['class'] = 'Content'
         # Transit AS: Any AS with at least one customer.
-        elif len(data[a_s]['as_links']['p2c']) > 0:
+        elif len(data[a_s]['as_links']['p2c']) >= 1:
             data[a_s]['class'] = 'Transit'
 
 # Sort to rank all ASes according to their degree and place them to set R later
