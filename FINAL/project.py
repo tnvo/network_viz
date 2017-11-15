@@ -20,7 +20,7 @@ def read_files(data, prefix):
     # 5690|40191|0|bgp
     # 5690|395127|-1|bgp
     # 0 and -1 is in index[2]
-    fileIn = "20170901.as-rel_small.txt"
+    fileIn = "20170901.as-rel2.txt"
     # Create a list to lookup data for determining provider node
     # This list negates the need to reopen the file
     lookupProvider = []
