@@ -298,7 +298,6 @@ def n_cone(all, n_ips, n_prefix):
 
     for a_s in all:
         # print("dfs-ing a_s: {}".format(a_s))
-        print("Setting up meaningful cone data ...")
         n_cone = set()
         n_pref = set ()
         dfs(all, a_s, visited=n_cone)
@@ -308,8 +307,8 @@ def n_cone(all, n_ips, n_prefix):
         all[a_s]['cCone']['cone_size'] = len(n_cone)
 
         # running through loop for prefixes in customer cone
+        print("Adding cone prefix info...")
         for cone_a_s in all[a_s]['cCone']['cone']:
-            print("Adding cone prefix info...")
             if cone_a_s in all:
                 for x in all[cone_a_s]['prefix']:
                     n_pref.add(x)
@@ -318,10 +317,8 @@ def n_cone(all, n_ips, n_prefix):
         ips = 0
         for pref in all[a_s]['cCone']['prefix']:
             # print (pref)
-            print("Figuring out cone prefix and ips stuffs ...")
             sbits = int(pref.split('/')[1])
             ips += pow(2, 32 - sbits)
-        print("Final calculations ...")
         all[a_s]['cCone']['ips'] = ips
         all[a_s]['cCone']['as_Pct'] = len(all[a_s]['cCone']['cone']) / len(all)
         all[a_s]['cCone']['prefix_Pct'] = len(all[a_s]['cCone']['prefix']) / len(n_prefix)
